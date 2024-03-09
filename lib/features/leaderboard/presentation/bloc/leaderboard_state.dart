@@ -1,9 +1,18 @@
 part of 'leaderboard_bloc.dart';
 
-abstract class LeaderboardState extends Equatable {
-  const LeaderboardState();  
+@immutable
+sealed class LeaderboardState {}
 
-  @override
-  List<Object> get props => [];
+final class LeaderboardInitial extends LeaderboardState {}
+
+final class LeaderboardLoading extends LeaderboardState {}
+
+final class LeaderboardSuccess extends LeaderboardState {
+  final List<LeaderboardModel> leaderboardData;
+  LeaderboardSuccess(this.leaderboardData);
 }
-class LeaderboardInitial extends LeaderboardState {}
+
+final class LeaderboardError extends LeaderboardState {
+  final String error;
+  LeaderboardError(this.error);
+}
