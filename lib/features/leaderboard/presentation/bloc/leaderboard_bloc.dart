@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:levelup/features/leaderboard/data/datasources/remote_datasource.dart';
 import 'package:levelup/features/leaderboard/data/models/leaderboard_model.dart';
 import 'package:meta/meta.dart';
